@@ -2,6 +2,7 @@ package com.example;
 
 public class App {
     static final int NUMBER_OF_OBJECTS = 5_000_000;
+    static final int OBJECT_SIZE = 50;
 
     public static void main( String[] args ) {
         boolean[] reflective = {false, true};
@@ -14,9 +15,9 @@ public class App {
 
             FairlyBigObject[] objects = new FairlyBigObject[NUMBER_OF_OBJECTS];
             for(int i=0; i<objects.length; i++) {
-                objects[i] = new FairlyBigObject(10, reflective[testCase]);
+                objects[i] = new FairlyBigObject(OBJECT_SIZE, reflective[testCase]);
             }
-            FairlyBigObject comparee = new FairlyBigObject(10, reflective[testCase]);
+            FairlyBigObject comparee = new FairlyBigObject(OBJECT_SIZE, reflective[testCase]);
             boolean[] result = new boolean[NUMBER_OF_OBJECTS];
 
             System.out.println(messages[testCase]);
